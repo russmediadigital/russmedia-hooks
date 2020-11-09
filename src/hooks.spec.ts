@@ -119,7 +119,6 @@ describe('Testing the async hooks library', () => {
 
   test(`filter hooks return the first arg as default`, async () => {
     const hooks = createHooks()
-    hooks.addFilter(`filter`, (a) => a)
 
     const r = await hooks.applyFilters(`filter`, 'some value')
     expect(r).toBe(`some value`)

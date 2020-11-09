@@ -60,14 +60,15 @@ class Hooks {
     withReturn: boolean,
     ...args: any[]
   ) {
-    if (!list[name]) return
-    for (let i = 0; i < list[name].length; i++) {
-      const handler = list[name][i]
+    if (list[name]) {
+      for (let i = 0; i < list[name].length; i++) {
+        const handler = list[name][i]
 
-      // @ts-ignore Expected 1-2 arguments, but got 1 or more
-      const ret = await handler.callback.apply(null, ...args)
-      if (withReturn) {
-        args[0][0] = ret
+        // @ts-ignore Expected 1-2 arguments, but got 1 or more
+        const ret = await handler.callback.apply(null, ...args)
+        if (withReturn) {
+          args[0][0] = ret
+        }
       }
     }
 
