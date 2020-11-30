@@ -1,6 +1,6 @@
 {
   "name": "@russmedia/hooks",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mimics the basic functionality of WordPress hooks, but with support for async operations.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -13,7 +13,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
     "dev": "tsc -p tsconfig.json -w"
